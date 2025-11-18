@@ -51,16 +51,24 @@ const EcommerceHeader = () => {
       backdropFilter: 'blur(20px)',
       borderBottom: `1px solid ${isScrolled ? '#e2e8f0' : 'transparent'}`,
       boxShadow: isScrolled ? '0 4px 20px rgba(0,0,0,0.08)' : 'none',
-      transition: 'all 0.3s ease'
+      transition: 'all 0.3s ease',
+      width: '100%',
+      left: 0,
+      right: 0,
+      willChange: 'transform',
+      WebkitTransform: 'translateZ(0)',
+      transform: 'translateZ(0)'
     }}>
       <div style={{
         maxWidth: '1400px',
         margin: '0 auto',
-        padding: isMobile ? '15px 20px' : '20px 40px',
+        padding: isMobile ? '15px 16px' : '20px 40px',
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'space-between',
-        gap: '30px'
+        gap: isMobile ? '12px' : '30px',
+        width: '100%',
+        boxSizing: 'border-box'
       }}>
         {/* Logo & Brand */}
         <Link

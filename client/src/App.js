@@ -45,6 +45,7 @@ import AdminUsers from './pages/admin/AdminUsers';
 import AdminSettings from './pages/admin/AdminSettings';
 import './styles-production.css';
 import './styles/ecommerce.css';
+import './styles/mobile-fix.css';
 
 function AppContent() {
   const location = useLocation();
