@@ -82,12 +82,14 @@ const ProductList = () => {
     filteredProducts = [...filteredProducts].sort((a, b) => b.rating - a.rating);
   }
 
+  const isMobile = !isDesktop;
+
   return (
     <div style={{
       minHeight: '100vh',
       background: '#f8fafc',
-      padding: '40px 20px',
-      paddingBottom: '100px'
+      padding: isMobile ? '20px 16px' : '40px 20px',
+      paddingBottom: isMobile ? '80px' : '100px'
     }}>
       {/* Container - Desktop Optimized */}
       <div style={{
@@ -111,42 +113,45 @@ const ProductList = () => {
         {/* Header */}
         <div style={{
           background: '#fff',
-          borderRadius: '24px',
-          padding: '40px',
-          marginBottom: '40px',
+          borderRadius: isMobile ? '16px' : '24px',
+          padding: isMobile ? '20px 16px' : '40px',
+          marginBottom: isMobile ? '24px' : '40px',
           boxShadow: '0 4px 20px rgba(0,0,0,0.08)'
         }}>
           <div style={{
             display: 'flex',
             alignItems: 'center',
-            gap: '20px',
-            marginBottom: '30px',
+            gap: isMobile ? '12px' : '20px',
+            marginBottom: isMobile ? '20px' : '30px',
             flexWrap: 'wrap'
           }}>
             <div style={{ 
-              fontSize: '56px',
+              fontSize: isMobile ? '40px' : '56px',
               background: 'linear-gradient(135deg, #1a5ca2, #3eb4a8)',
-              width: '80px',
-              height: '80px',
-              borderRadius: '20px',
+              width: isMobile ? '60px' : '80px',
+              height: isMobile ? '60px' : '80px',
+              borderRadius: isMobile ? '12px' : '20px',
               display: 'flex',
               alignItems: 'center',
               justifyContent: 'center',
-              boxShadow: '0 8px 20px rgba(102, 126, 234, 0.3)'
+              boxShadow: '0 8px 20px rgba(102, 126, 234, 0.3)',
+              flexShrink: 0
             }}>
               {category?.icon}
             </div>
-            <div style={{ flex: 1 }}>
+            <div style={{ flex: 1, minWidth: 0 }}>
               <h1 style={{
-                fontSize: 'clamp(28px, 4vw, 40px)',
+                fontSize: isMobile ? '24px' : 'clamp(28px, 4vw, 40px)',
                 fontWeight: '800',
                 color: '#1e293b',
-                margin: '0 0 8px 0'
+                margin: '0 0 8px 0',
+                lineHeight: '1.3',
+                wordWrap: 'break-word'
               }}>
                 {category?.name || 'Sản phẩm'}
               </h1>
               <p style={{
-                fontSize: '16px',
+                fontSize: isMobile ? '14px' : '16px',
                 color: '#64748b',
                 margin: 0
               }}>
@@ -157,18 +162,18 @@ const ProductList = () => {
 
           {/* Filter Buttons */}
           <div style={{
-            marginBottom: '30px',
+            marginBottom: isMobile ? '20px' : '30px',
             display: 'flex',
             flexWrap: 'wrap',
-            gap: '12px'
+            gap: isMobile ? '8px' : '12px'
           }}>
             <button
               onClick={() => setActiveFilter('all')}
               style={{
-                padding: '12px 24px',
-                borderRadius: '10px',
+                padding: isMobile ? '10px 16px' : '12px 24px',
+                borderRadius: isMobile ? '8px' : '10px',
                 border: 'none',
-                fontSize: '14px',
+                fontSize: isMobile ? '13px' : '14px',
                 fontWeight: '600',
                 cursor: 'pointer',
                 transition: 'all 0.2s',
@@ -178,7 +183,9 @@ const ProductList = () => {
                 color: activeFilter === 'all' ? '#fff' : '#475569',
                 boxShadow: activeFilter === 'all' 
                   ? '0 4px 12px rgba(26, 92, 162, 0.3)' 
-                  : 'none'
+                  : 'none',
+                minHeight: isMobile ? '40px' : 'auto',
+                whiteSpace: 'nowrap'
               }}
               onMouseEnter={(e) => {
                 if (activeFilter !== 'all') {
@@ -196,10 +203,10 @@ const ProductList = () => {
             <button
               onClick={() => setActiveFilter('hot')}
               style={{
-                padding: '12px 24px',
-                borderRadius: '10px',
+                padding: isMobile ? '10px 16px' : '12px 24px',
+                borderRadius: isMobile ? '8px' : '10px',
                 border: 'none',
-                fontSize: '14px',
+                fontSize: isMobile ? '13px' : '14px',
                 fontWeight: '600',
                 cursor: 'pointer',
                 transition: 'all 0.2s',
@@ -209,7 +216,9 @@ const ProductList = () => {
                 color: activeFilter === 'hot' ? '#fff' : '#475569',
                 boxShadow: activeFilter === 'hot' 
                   ? '0 4px 12px rgba(26, 92, 162, 0.3)' 
-                  : 'none'
+                  : 'none',
+                minHeight: isMobile ? '40px' : 'auto',
+                whiteSpace: 'nowrap'
               }}
               onMouseEnter={(e) => {
                 if (activeFilter !== 'hot') {
@@ -227,10 +236,10 @@ const ProductList = () => {
             <button
               onClick={() => setActiveFilter('active')}
               style={{
-                padding: '12px 24px',
-                borderRadius: '10px',
+                padding: isMobile ? '10px 16px' : '12px 24px',
+                borderRadius: isMobile ? '8px' : '10px',
                 border: 'none',
-                fontSize: '14px',
+                fontSize: isMobile ? '13px' : '14px',
                 fontWeight: '600',
                 cursor: 'pointer',
                 transition: 'all 0.2s',
@@ -240,7 +249,9 @@ const ProductList = () => {
                 color: activeFilter === 'active' ? '#fff' : '#475569',
                 boxShadow: activeFilter === 'active' 
                   ? '0 4px 12px rgba(26, 92, 162, 0.3)' 
-                  : 'none'
+                  : 'none',
+                minHeight: isMobile ? '40px' : 'auto',
+                whiteSpace: 'nowrap'
               }}
               onMouseEnter={(e) => {
                 if (activeFilter !== 'active') {
@@ -258,10 +269,10 @@ const ProductList = () => {
             <button
               onClick={() => setActiveFilter('bestseller')}
               style={{
-                padding: '12px 24px',
-                borderRadius: '10px',
+                padding: isMobile ? '10px 16px' : '12px 24px',
+                borderRadius: isMobile ? '8px' : '10px',
                 border: 'none',
-                fontSize: '14px',
+                fontSize: isMobile ? '13px' : '14px',
                 fontWeight: '600',
                 cursor: 'pointer',
                 transition: 'all 0.2s',
@@ -271,7 +282,9 @@ const ProductList = () => {
                 color: activeFilter === 'bestseller' ? '#fff' : '#475569',
                 boxShadow: activeFilter === 'bestseller' 
                   ? '0 4px 12px rgba(26, 92, 162, 0.3)' 
-                  : 'none'
+                  : 'none',
+                minHeight: isMobile ? '40px' : 'auto',
+                whiteSpace: 'nowrap'
               }}
               onMouseEnter={(e) => {
                 if (activeFilter !== 'bestseller') {
@@ -290,16 +303,18 @@ const ProductList = () => {
               value={selectedBrand}
               onChange={(e) => setSelectedBrand(e.target.value)}
               style={{
-                padding: '12px 20px',
+                padding: isMobile ? '10px 16px' : '12px 20px',
                 border: '2px solid #e2e8f0',
-                borderRadius: '10px',
-                fontSize: '14px',
+                borderRadius: isMobile ? '8px' : '10px',
+                fontSize: isMobile ? '13px' : '14px',
                 outline: 'none',
                 background: '#fff',
                 cursor: 'pointer',
                 fontWeight: '600',
                 color: selectedBrand !== 'all' ? '#1a5ca2' : '#475569',
-                minWidth: '150px'
+                minWidth: isMobile ? '120px' : '150px',
+                minHeight: isMobile ? '40px' : 'auto',
+                width: isMobile ? '100%' : 'auto'
               }}
             >
               <option value="all">Tất cả hãng</option>
@@ -321,18 +336,19 @@ const ProductList = () => {
             }}>
               <input
                 type="text"
-                placeholder="🔍 Tìm kiếm sản phẩm theo tên hoặc mã..."
+                placeholder={isMobile ? "🔍 Tìm kiếm..." : "🔍 Tìm kiếm sản phẩm theo tên hoặc mã..."}
                 value={searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value)}
                 style={{
                   width: '100%',
-                  padding: '16px 20px 16px 50px',
+                  padding: isMobile ? '12px 16px 12px 44px' : '16px 20px 16px 50px',
                   border: '2px solid #e2e8f0',
-                  borderRadius: '12px',
-                  fontSize: '15px',
+                  borderRadius: isMobile ? '10px' : '12px',
+                  fontSize: isMobile ? '16px' : '15px',
                   outline: 'none',
                   transition: 'all 0.2s',
-                  background: '#f8fafc'
+                  background: '#f8fafc',
+                  minHeight: isMobile ? '44px' : 'auto'
                 }}
                 onFocus={(e) => {
                   e.currentTarget.style.borderColor = '#667eea';
@@ -347,10 +363,10 @@ const ProductList = () => {
               />
               <div style={{
                 position: 'absolute',
-                left: '18px',
+                left: isMobile ? '14px' : '18px',
                 top: '50%',
                 transform: 'translateY(-50%)',
-                fontSize: '20px'
+                fontSize: isMobile ? '18px' : '20px'
               }}>
                 🔍
               </div>
@@ -359,16 +375,18 @@ const ProductList = () => {
               value={sortBy}
               onChange={(e) => setSortBy(e.target.value)}
               style={{
-                padding: '16px 20px',
+                padding: isMobile ? '12px 16px' : '16px 20px',
                 border: '2px solid #e2e8f0',
-                borderRadius: '12px',
-                fontSize: '15px',
+                borderRadius: isMobile ? '10px' : '12px',
+                fontSize: isMobile ? '16px' : '15px',
                 outline: 'none',
                 background: '#fff',
                 cursor: 'pointer',
                 fontWeight: '500',
                 color: '#475569',
-                minWidth: '180px'
+                minWidth: isMobile ? '100%' : '180px',
+                minHeight: isMobile ? '44px' : 'auto',
+                width: isMobile ? '100%' : 'auto'
               }}
             >
               <option value="default">Mặc định</option>

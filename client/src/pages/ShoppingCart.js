@@ -111,12 +111,14 @@ const ShoppingCart = () => {
     );
   }
 
+  const isMobile = !isDesktop;
+
   return (
     <div style={{
       minHeight: '100vh',
       background: '#f8fafc',
-      padding: '40px 20px',
-      paddingBottom: '120px'
+      padding: isMobile ? '20px 16px' : '40px 20px',
+      paddingBottom: isMobile ? '100px' : '120px'
     }}>
       {/* Container - Desktop Optimized */}
       <div style={{
@@ -131,27 +133,30 @@ const ShoppingCart = () => {
           {/* Header */}
           <div style={{
             background: '#fff',
-            borderRadius: '24px',
-            padding: '35px',
-            marginBottom: '30px',
+            borderRadius: isMobile ? '16px' : '24px',
+            padding: isMobile ? '20px 16px' : '35px',
+            marginBottom: isMobile ? '20px' : '30px',
             boxShadow: '0 4px 20px rgba(0,0,0,0.08)'
           }}>
             <div style={{
               display: 'flex',
+              flexDirection: isMobile ? 'column' : 'row',
               justifyContent: 'space-between',
-              alignItems: 'center'
+              alignItems: isMobile ? 'flex-start' : 'center',
+              gap: isMobile ? '16px' : '0'
             }}>
-              <div>
+              <div style={{ flex: 1 }}>
                 <h1 style={{
-                  fontSize: '36px',
+                  fontSize: isMobile ? '24px' : '36px',
                   fontWeight: '800',
                   color: '#1e293b',
-                  marginBottom: '8px'
+                  marginBottom: '8px',
+                  lineHeight: '1.3'
                 }}>
                   🛒 Giỏ hàng
                 </h1>
                 <p style={{
-                  fontSize: '16px',
+                  fontSize: isMobile ? '14px' : '16px',
                   color: '#64748b',
                   margin: 0
                 }}>
@@ -161,15 +166,17 @@ const ShoppingCart = () => {
               <button
                 onClick={clearCart}
                 style={{
-                  padding: '12px 24px',
+                  padding: isMobile ? '10px 16px' : '12px 24px',
                   background: '#fee2e2',
                   color: '#dc2626',
                   border: 'none',
-                  borderRadius: '10px',
-                  fontSize: '14px',
+                  borderRadius: isMobile ? '8px' : '10px',
+                  fontSize: isMobile ? '13px' : '14px',
                   fontWeight: '600',
                   cursor: 'pointer',
-                  transition: 'all 0.2s'
+                  transition: 'all 0.2s',
+                  width: isMobile ? '100%' : 'auto',
+                  minHeight: isMobile ? '44px' : 'auto'
                 }}
                 onMouseEnter={(e) => {
                   e.currentTarget.style.background = '#fecaca';
@@ -195,10 +202,11 @@ const ShoppingCart = () => {
                 key={item.id}
                 style={{
                   background: '#fff',
-                  borderRadius: '20px',
-                  padding: '28px',
+                  borderRadius: isMobile ? '16px' : '20px',
+                  padding: isMobile ? '16px' : '28px',
                   display: 'flex',
-                  gap: '24px',
+                  flexDirection: isMobile ? 'column' : 'row',
+                  gap: isMobile ? '16px' : '24px',
                   boxShadow: '0 4px 20px rgba(0,0,0,0.08)',
                   transition: 'all 0.3s',
                   border: '1px solid #f1f5f9'
@@ -212,69 +220,84 @@ const ShoppingCart = () => {
                   e.currentTarget.style.borderColor = '#f1f5f9';
                 }}
               >
-                <img
-                  src={item.image || '/image/logo.png'}
-                  alt={item.name}
-                  style={{
-                    width: '140px',
-                    height: '140px',
-                    objectFit: 'contain',
-                    borderRadius: '16px',
-                    background: 'linear-gradient(135deg, #f8fafc, #f1f5f9)',
-                    flexShrink: 0,
-                    border: '1px solid #e2e8f0'
-                  }}
-                />
-                <div style={{ flex: 1, display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
-                  <div>
-                    <h3 style={{
-                      fontSize: '20px',
-                      fontWeight: '700',
-                      color: '#1e293b',
-                      margin: '0 0 8px 0'
-                    }}>
-                      {item.name}
-                    </h3>
-                    <div style={{
-                      fontSize: '14px',
-                      color: '#64748b',
-                      marginBottom: '12px'
-                    }}>
-                      {item.code} • {formatCurrency(item.price)} / {item.unit}
+                <div style={{
+                  display: 'flex',
+                  gap: isMobile ? '12px' : '24px',
+                  width: '100%'
+                }}>
+                  <img
+                    src={item.image || '/image/logo.png'}
+                    alt={item.name}
+                    style={{
+                      width: isMobile ? '100px' : '140px',
+                      height: isMobile ? '100px' : '140px',
+                      objectFit: 'contain',
+                      borderRadius: isMobile ? '12px' : '16px',
+                      background: 'linear-gradient(135deg, #f8fafc, #f1f5f9)',
+                      flexShrink: 0,
+                      border: '1px solid #e2e8f0'
+                    }}
+                  />
+                  <div style={{ flex: 1, display: 'flex', flexDirection: 'column', justifyContent: 'space-between', minWidth: 0 }}>
+                    <div>
+                      <h3 style={{
+                        fontSize: isMobile ? '16px' : '20px',
+                        fontWeight: '700',
+                        color: '#1e293b',
+                        margin: '0 0 8px 0',
+                        lineHeight: '1.4',
+                        wordWrap: 'break-word'
+                      }}>
+                        {item.name}
+                      </h3>
+                      <div style={{
+                        fontSize: isMobile ? '12px' : '14px',
+                        color: '#64748b',
+                        marginBottom: '12px',
+                        wordWrap: 'break-word'
+                      }}>
+                        {item.code} • {formatCurrency(item.price)} / {item.unit}
+                      </div>
                     </div>
                   </div>
+                </div>
                   
                   {/* Quantity Controls */}
                   <div style={{
                     display: 'flex',
                     alignItems: 'center',
                     justifyContent: 'space-between',
-                    gap: '20px'
+                    gap: isMobile ? '12px' : '20px',
+                    marginTop: isMobile ? '8px' : '0'
                   }}>
                     <div style={{
                       display: 'flex',
                       alignItems: 'center',
-                      gap: '15px',
+                      gap: isMobile ? '12px' : '15px',
                       background: '#f8fafc',
-                      padding: '8px',
-                      borderRadius: '12px'
+                      padding: isMobile ? '6px' : '8px',
+                      borderRadius: isMobile ? '10px' : '12px',
+                      flex: 1,
+                      justifyContent: 'center'
                     }}>
                       <button
                         onClick={() => updateQuantity(item.id, item.quantity - 1)}
                         style={{
-                          width: '40px',
-                          height: '40px',
+                          width: isMobile ? '36px' : '40px',
+                          height: isMobile ? '36px' : '40px',
                           background: '#fff',
                           border: '1px solid #e2e8f0',
-                          borderRadius: '10px',
-                          fontSize: '20px',
+                          borderRadius: isMobile ? '8px' : '10px',
+                          fontSize: isMobile ? '18px' : '20px',
                           cursor: 'pointer',
                           display: 'flex',
                           alignItems: 'center',
                           justifyContent: 'center',
                           transition: 'all 0.2s',
                           color: '#475569',
-                          fontWeight: '600'
+                          fontWeight: '600',
+                          minWidth: isMobile ? '36px' : '40px',
+                          minHeight: isMobile ? '36px' : '40px'
                         }}
                         onMouseEnter={(e) => {
                           e.currentTarget.style.background = '#f1f5f9';
@@ -288,9 +311,9 @@ const ShoppingCart = () => {
                         −
                       </button>
                       <span style={{
-                        fontSize: '18px',
+                        fontSize: isMobile ? '16px' : '18px',
                         fontWeight: '700',
-                        minWidth: '50px',
+                        minWidth: isMobile ? '40px' : '50px',
                         textAlign: 'center',
                         color: '#1e293b'
                       }}>
@@ -299,19 +322,21 @@ const ShoppingCart = () => {
                       <button
                         onClick={() => updateQuantity(item.id, item.quantity + 1)}
                         style={{
-                          width: '40px',
-                          height: '40px',
+                          width: isMobile ? '36px' : '40px',
+                          height: isMobile ? '36px' : '40px',
                           background: '#fff',
                           border: '1px solid #e2e8f0',
-                          borderRadius: '10px',
-                          fontSize: '20px',
+                          borderRadius: isMobile ? '8px' : '10px',
+                          fontSize: isMobile ? '18px' : '20px',
                           cursor: 'pointer',
                           display: 'flex',
                           alignItems: 'center',
                           justifyContent: 'center',
                           transition: 'all 0.2s',
                           color: '#475569',
-                          fontWeight: '600'
+                          fontWeight: '600',
+                          minWidth: isMobile ? '36px' : '40px',
+                          minHeight: isMobile ? '36px' : '40px'
                         }}
                         onMouseEnter={(e) => {
                           e.currentTarget.style.background = '#f1f5f9';
@@ -326,23 +351,25 @@ const ShoppingCart = () => {
                       </button>
                     </div>
                     <div style={{
-                      fontSize: '24px',
+                      fontSize: isMobile ? '18px' : '24px',
                       fontWeight: '800',
                       color: '#1a5ca2',
-                      minWidth: '150px',
-                      textAlign: 'right'
+                      minWidth: isMobile ? '100px' : '150px',
+                      textAlign: 'right',
+                      flex: isMobile ? 1 : 'none'
                     }}>
                       {formatCurrency(item.price * item.quantity)}
                     </div>
                     <button
                       onClick={() => removeFromCart(item.id)}
                       style={{
-                        padding: '10px 20px',
+                        padding: isMobile ? '8px 16px' : '10px 20px',
                         background: '#fee2e2',
+                        minHeight: isMobile ? '36px' : 'auto',
+                        fontSize: isMobile ? '13px' : '14px',
                         color: '#dc2626',
                         border: 'none',
-                        borderRadius: '10px',
-                        fontSize: '14px',
+                        borderRadius: isMobile ? '8px' : '10px',
                         cursor: 'pointer',
                         transition: 'all 0.2s',
                         fontWeight: '600'
