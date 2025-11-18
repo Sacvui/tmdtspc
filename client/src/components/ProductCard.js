@@ -8,6 +8,15 @@ const ProductCard = ({ product }) => {
   const { addToCart } = useCart();
   const { user } = useAuth();
   const isLoggedIn = !!user;
+  const [isMobile, setIsMobile] = React.useState(window.innerWidth < 768);
+  
+  React.useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
 
   const handleAddToCart = (e) => {
     e.preventDefault();
@@ -150,12 +159,14 @@ const ProductCard = ({ product }) => {
                 right: '16px',
                 background: 'linear-gradient(135deg, #ef4444, #dc2626)',
                 color: '#fff',
-                padding: '8px 14px',
+                padding: isMobile ? '6px 10px' : '8px 14px',
                 borderRadius: '30px',
-                fontSize: '13px',
+                fontSize: isMobile ? '11px' : '13px',
                 fontWeight: '700',
                 boxShadow: '0 4px 12px rgba(239, 68, 68, 0.4)',
-                zIndex: 2
+                zIndex: 2,
+                whiteSpace: 'nowrap',
+                minWidth: isMobile ? '45px' : 'auto'
               }}>
                 -{discountPercent}%
               </div>
@@ -163,21 +174,25 @@ const ProductCard = ({ product }) => {
             {product.promotions && product.promotions.length > 0 && (
               <div style={{
                 position: 'absolute',
-                top: '16px',
+                top: hasDiscount ? (isMobile ? '48px' : '50px') : '16px',
                 left: '16px',
                 background: 'rgba(255, 255, 255, 0.95)',
                 backdropFilter: 'blur(10px)',
                 color: '#f59e0b',
-                padding: '6px 12px',
+                padding: isMobile ? '4px 8px' : '6px 12px',
                 borderRadius: '20px',
-                fontSize: '11px',
+                fontSize: isMobile ? '10px' : '11px',
                 fontWeight: '700',
                 zIndex: 2,
                 display: 'flex',
                 alignItems: 'center',
-                gap: '4px'
+                gap: '4px',
+                maxWidth: hasDiscount ? (isMobile ? 'calc(100% - 90px)' : 'calc(100% - 100px)') : (isMobile ? 'calc(100% - 80px)' : 'calc(100% - 100px)'),
+                whiteSpace: 'nowrap',
+                overflow: 'hidden',
+                textOverflow: 'ellipsis'
               }}>
-                🎁 Khuyến mãi
+                🎁 {isMobile ? 'KM' : 'Khuyến mãi'}
               </div>
             )}
           </div>
@@ -254,24 +269,42 @@ const ProductCard = ({ product }) => {
                   <div style={{
                     display: 'flex',
                     alignItems: 'baseline',
-                    gap: '8px',
-                    marginBottom: '6px'
+                    gap: isMobile ? '6px' : '8px',
+                    marginBottom: '6px',
+                    flexWrap: 'wrap'
                   }}>
                     <span style={{
-                      fontSize: '24px',
+                      fontSize: isMobile ? '20px' : '24px',
                       fontWeight: '800',
-                      color: '#1a5ca2'
+                      color: '#1a5ca2',
+                      lineHeight: '1.2'
                     }}>
                       {formatCurrency(product.price)}
                     </span>
                     <span style={{
-                      fontSize: '14px',
+                      fontSize: isMobile ? '12px' : '14px',
                       color: '#64748b',
-                      fontWeight: '500'
+                      fontWeight: '500',
+                      whiteSpace: 'nowrap'
                     }}>
                       / {product.unit}
                     </span>
                   </div>
+                  {product.promotions && product.promotions.length > 0 && (
+                    <div style={{
+                      fontSize: isMobile ? '11px' : '12px',
+                      color: '#f59e0b',
+                      fontWeight: '600',
+                      marginTop: '4px',
+                      display: 'flex',
+                      alignItems: 'center',
+                      gap: '4px',
+                      flexWrap: 'wrap'
+                    }}>
+                      <span>🎁</span>
+                      <span>{isMobile ? 'KM' : 'Khuyến mãi'}: {product.promotions[0]?.description || 'Đặc biệt'}</span>
+                    </div>
+                  )}
                 </>
               ) : (
                 <div style={{
