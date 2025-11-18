@@ -1,0 +1,599 @@
+{
+  "categories": [
+    {
+      "id": "cat1",
+      "name": "Thuốc kê đơn",
+      "icon": "💊",
+      "description": "Các loại thuốc kê đơn theo chỉ định của bác sĩ"
+    },
+    {
+      "id": "cat2",
+      "name": "Thuốc không kê đơn",
+      "icon": "💉",
+      "description": "Thuốc không cần kê đơn, an toàn cho sử dụng"
+    },
+    {
+      "id": "cat3",
+      "name": "Thực phẩm chức năng",
+      "icon": "🥗",
+      "description": "Bổ sung dinh dưỡng và tăng cường sức khỏe"
+    },
+    {
+      "id": "cat4",
+      "name": "Dụng cụ y tế",
+      "icon": "🩺",
+      "description": "Các dụng cụ y tế thiết yếu cho gia đình"
+    },
+    {
+      "id": "cat5",
+      "name": "Mỹ phẩm",
+      "icon": "✨",
+      "description": "Sản phẩm chăm sóc da và làm đẹp"
+    }
+  ],
+  "products": [
+    {
+      "id": "p001",
+      "code": "PAR500",
+      "name": "Paracetamol Sapharco 500mg",
+      "categoryId": "cat1",
+      "description": "Thuốc giảm đau, hạ sốt hiệu quả. Sản phẩm của Sapharco, chất lượng cao, an toàn cho người sử dụng.",
+      "price": 5000,
+      "originalPrice": 6000,
+      "unit": "Vĩ",
+      "stock": 150,
+      "image": "/image/logo.png",
+      "rating": 4.5,
+      "reviews": 120,
+      "promotions": [
+        {
+          "type": "discount",
+          "value": 10,
+          "description": "Giảm 10% cho đơn hàng từ 5 vĩ"
+        }
+      ]
+    },
+    {
+      "id": "p002",
+      "code": "AMO500",
+      "name": "Amoxicillin Sapharco 500mg",
+      "categoryId": "cat1",
+      "description": "Kháng sinh phổ rộng, điều trị nhiễm khuẩn đường hô hấp, tiết niệu. Sản phẩm chất lượng của Sapharco.",
+      "price": 8000,
+      "originalPrice": 10000,
+      "unit": "Vĩ",
+      "stock": 80,
+      "image": "/image/logo.png",
+      "rating": 4.7,
+      "reviews": 95,
+      "promotions": [
+        {
+          "type": "gift",
+          "value": "Khăn giấy y tế",
+          "description": "Tặng kèm khăn giấy y tế khi mua từ 3 vĩ"
+        }
+      ]
+    },
+    {
+      "id": "p003",
+      "code": "CIP500",
+      "name": "Ciprofloxacin Sapharco 500mg",
+      "categoryId": "cat1",
+      "description": "Kháng sinh quinolone, điều trị nhiễm khuẩn nặng. Sản phẩm đạt tiêu chuẩn GMP của Sapharco.",
+      "price": 12000,
+      "originalPrice": 15000,
+      "unit": "Vĩ",
+      "stock": 60,
+      "image": "/image/logo.png",
+      "rating": 4.6,
+      "reviews": 78,
+      "promotions": [
+        {
+          "type": "discount",
+          "value": 15,
+          "description": "Giảm 15% cho đơn hàng từ 10 vĩ"
+        }
+      ]
+    },
+    {
+      "id": "p004",
+      "code": "AZI500",
+      "name": "Azithromycin Sapharco 500mg",
+      "categoryId": "cat1",
+      "description": "Kháng sinh macrolide, điều trị nhiễm khuẩn đường hô hấp. Sản phẩm chất lượng cao của Sapharco.",
+      "price": 15000,
+      "originalPrice": 18000,
+      "unit": "Vĩ",
+      "stock": 45,
+      "image": "/image/logo.png",
+      "rating": 4.8,
+      "reviews": 156,
+      "promotions": []
+    },
+    {
+      "id": "p005",
+      "code": "MET500",
+      "name": "Metformin Sapharco 500mg",
+      "categoryId": "cat1",
+      "description": "Thuốc điều trị đái tháo đường type 2. Sản phẩm được tin dùng của Sapharco.",
+      "price": 3000,
+      "originalPrice": 3500,
+      "unit": "Vĩ",
+      "stock": 200,
+      "image": "/image/logo.png",
+      "rating": 4.4,
+      "reviews": 203,
+      "promotions": [
+        {
+          "type": "discount",
+          "value": 5,
+          "description": "Giảm 5% cho đơn hàng từ 20 vĩ"
+        },
+        {
+          "type": "gift",
+          "value": "Hộp khẩu trang",
+          "description": "Tặng kèm hộp khẩu trang khi mua từ 10 vĩ"
+        }
+      ]
+    },
+    {
+      "id": "p006",
+      "code": "PANEXT",
+      "name": "Panadol Extra Sapharco",
+      "categoryId": "cat2",
+      "description": "Giảm đau, hạ sốt nhanh chóng. Sản phẩm không kê đơn, an toàn cho mọi lứa tuổi.",
+      "price": 25000,
+      "originalPrice": 30000,
+      "unit": "Hộp",
+      "stock": 100,
+      "image": "/image/logo.png",
+      "rating": 4.9,
+      "reviews": 450,
+      "promotions": [
+        {
+          "type": "discount",
+          "value": 20,
+          "description": "Giảm 20% khi mua 2 hộp"
+        }
+      ]
+    },
+    {
+      "id": "p007",
+      "code": "TIFFY",
+      "name": "Tiffy Sapharco",
+      "categoryId": "cat2",
+      "description": "Thuốc cảm cúm, giảm triệu chứng nghẹt mũi, đau đầu. Sản phẩm phổ biến của Sapharco.",
+      "price": 20000,
+      "originalPrice": 25000,
+      "unit": "Hộp",
+      "stock": 120,
+      "image": "/image/logo.png",
+      "rating": 4.6,
+      "reviews": 320,
+      "promotions": [
+        {
+          "type": "gift",
+          "value": "Nước rửa tay",
+          "description": "Tặng kèm nước rửa tay khi mua từ 3 hộp"
+        }
+      ]
+    },
+    {
+      "id": "p008",
+      "code": "EFF500",
+      "name": "Efferalgan Sapharco 500mg",
+      "categoryId": "cat2",
+      "description": "Giảm đau, hạ sốt hiệu quả. Sản phẩm chất lượng của Sapharco, dễ uống.",
+      "price": 30000,
+      "originalPrice": 35000,
+      "unit": "Hộp",
+      "stock": 90,
+      "image": "/image/logo.png",
+      "rating": 4.7,
+      "reviews": 280,
+      "promotions": []
+    },
+    {
+      "id": "p009",
+      "code": "BERB",
+      "name": "Berberin Sapharco",
+      "categoryId": "cat2",
+      "description": "Điều trị tiêu chảy, rối loạn tiêu hóa. Sản phẩm thảo dược an toàn của Sapharco.",
+      "price": 10000,
+      "originalPrice": 12000,
+      "unit": "Vĩ",
+      "stock": 180,
+      "image": "/image/logo.png",
+      "rating": 4.5,
+      "reviews": 195,
+      "promotions": [
+        {
+          "type": "discount",
+          "value": 10,
+          "description": "Giảm 10% cho đơn hàng từ 5 vĩ"
+        }
+      ]
+    },
+    {
+      "id": "p010",
+      "code": "SMECTA",
+      "name": "Smecta Sapharco",
+      "categoryId": "cat2",
+      "description": "Điều trị tiêu chảy cấp và mãn tính. Sản phẩm được tin dùng của Sapharco.",
+      "price": 50000,
+      "originalPrice": 60000,
+      "unit": "Hộp",
+      "stock": 75,
+      "image": "/image/logo.png",
+      "rating": 4.8,
+      "reviews": 420,
+      "promotions": [
+        {
+          "type": "discount",
+          "value": 15,
+          "description": "Giảm 15% khi mua 2 hộp"
+        }
+      ]
+    },
+    {
+      "id": "p011",
+      "code": "VITC1000",
+      "name": "Vitamin C Sapharco 1000mg",
+      "categoryId": "cat3",
+      "description": "Tăng cường sức đề kháng, chống oxy hóa. Sản phẩm chất lượng cao của Sapharco.",
+      "price": 150000,
+      "originalPrice": 180000,
+      "unit": "Hộp",
+      "stock": 50,
+      "image": "/image/logo.png",
+      "rating": 4.9,
+      "reviews": 380,
+      "promotions": [
+        {
+          "type": "discount",
+          "value": 20,
+          "description": "Giảm 20% khi mua 2 hộp"
+        },
+        {
+          "type": "gift",
+          "value": "Viên sủi Vitamin C",
+          "description": "Tặng kèm 1 hộp viên sủi khi mua từ 3 hộp"
+        }
+      ]
+    },
+    {
+      "id": "p012",
+      "code": "VITD2000",
+      "name": "Vitamin D3 Sapharco 2000IU",
+      "categoryId": "cat3",
+      "description": "Bổ sung Vitamin D3, tốt cho xương và hệ miễn dịch. Sản phẩm của Sapharco.",
+      "price": 200000,
+      "originalPrice": 240000,
+      "unit": "Hộp",
+      "stock": 40,
+      "image": "/image/logo.png",
+      "rating": 4.7,
+      "reviews": 245,
+      "promotions": [
+        {
+          "type": "discount",
+          "value": 15,
+          "description": "Giảm 15% cho đơn hàng từ 2 hộp"
+        }
+      ]
+    },
+    {
+      "id": "p013",
+      "code": "OMEGA3",
+      "name": "Omega 3 Sapharco",
+      "categoryId": "cat3",
+      "description": "Bổ sung DHA, EPA tốt cho tim mạch và não bộ. Sản phẩm chất lượng của Sapharco.",
+      "price": 250000,
+      "originalPrice": 300000,
+      "unit": "Hộp",
+      "stock": 35,
+      "image": "/image/logo.png",
+      "rating": 4.8,
+      "reviews": 298,
+      "promotions": [
+        {
+          "type": "gift",
+          "value": "Hộp Vitamin E",
+          "description": "Tặng kèm hộp Vitamin E khi mua từ 2 hộp"
+        }
+      ]
+    },
+    {
+      "id": "p014",
+      "code": "CALCD3",
+      "name": "Calcium + D3 Sapharco",
+      "categoryId": "cat3",
+      "description": "Bổ sung canxi và vitamin D3, tốt cho xương khớp. Sản phẩm của Sapharco.",
+      "price": 180000,
+      "originalPrice": 220000,
+      "unit": "Hộp",
+      "stock": 55,
+      "image": "/image/logo.png",
+      "rating": 4.6,
+      "reviews": 187,
+      "promotions": []
+    },
+    {
+      "id": "p015",
+      "code": "GINKGO",
+      "name": "Ginkgo Biloba Sapharco",
+      "categoryId": "cat3",
+      "description": "Cải thiện trí nhớ, tuần hoàn máu não. Sản phẩm thảo dược của Sapharco.",
+      "price": 300000,
+      "originalPrice": 350000,
+      "unit": "Hộp",
+      "stock": 30,
+      "image": "/image/logo.png",
+      "rating": 4.5,
+      "reviews": 142,
+      "promotions": [
+        {
+          "type": "discount",
+          "value": 10,
+          "description": "Giảm 10% cho đơn hàng từ 2 hộp"
+        }
+      ]
+    },
+    {
+      "id": "p016",
+      "code": "MASK",
+      "name": "Khẩu trang y tế Sapharco",
+      "categoryId": "cat4",
+      "description": "Khẩu trang y tế 3 lớp, bảo vệ hiệu quả. Sản phẩm chất lượng của Sapharco.",
+      "price": 50000,
+      "originalPrice": 60000,
+      "unit": "Hộp",
+      "stock": 200,
+      "image": "/image/logo.png",
+      "rating": 4.8,
+      "reviews": 520,
+      "promotions": [
+        {
+          "type": "discount",
+          "value": 20,
+          "description": "Giảm 20% khi mua từ 5 hộp"
+        }
+      ]
+    },
+    {
+      "id": "p017",
+      "code": "THERMO",
+      "name": "Nhiệt kế điện tử Sapharco",
+      "categoryId": "cat4",
+      "description": "Nhiệt kế điện tử đo nhanh, chính xác. Sản phẩm thiết yếu cho gia đình.",
+      "price": 150000,
+      "originalPrice": 180000,
+      "unit": "Cái",
+      "stock": 60,
+      "image": "/image/logo.png",
+      "rating": 4.7,
+      "reviews": 198,
+      "promotions": [
+        {
+          "type": "gift",
+          "value": "Pin dự phòng",
+          "description": "Tặng kèm pin dự phòng khi mua"
+        }
+      ]
+    },
+    {
+      "id": "p018",
+      "code": "BP",
+      "name": "Máy đo huyết áp Sapharco",
+      "categoryId": "cat4",
+      "description": "Máy đo huyết áp điện tử tự động, dễ sử dụng. Sản phẩm chất lượng của Sapharco.",
+      "price": 500000,
+      "originalPrice": 600000,
+      "unit": "Cái",
+      "stock": 25,
+      "image": "/image/logo.png",
+      "rating": 4.9,
+      "reviews": 156,
+      "promotions": [
+        {
+          "type": "discount",
+          "value": 15,
+          "description": "Giảm 15% cho đơn hàng"
+        },
+        {
+          "type": "gift",
+          "value": "Túi đựng máy",
+          "description": "Tặng kèm túi đựng máy cao cấp"
+        }
+      ]
+    },
+    {
+      "id": "p019",
+      "code": "PREGTEST",
+      "name": "Que thử thai Sapharco",
+      "categoryId": "cat4",
+      "description": "Que thử thai nhanh, chính xác. Sản phẩm chất lượng của Sapharco.",
+      "price": 25000,
+      "originalPrice": 30000,
+      "unit": "Que",
+      "stock": 150,
+      "image": "/image/logo.png",
+      "rating": 4.6,
+      "reviews": 89,
+      "promotions": [
+        {
+          "type": "discount",
+          "value": 10,
+          "description": "Giảm 10% khi mua từ 3 que"
+        }
+      ]
+    },
+    {
+      "id": "p020",
+      "code": "BANDAGE",
+      "name": "Băng gạc y tế Sapharco",
+      "categoryId": "cat4",
+      "description": "Băng gạc y tế vô trùng, chất lượng cao. Sản phẩm của Sapharco.",
+      "price": 30000,
+      "originalPrice": 35000,
+      "unit": "Hộp",
+      "stock": 100,
+      "image": "/image/logo.png",
+      "rating": 4.5,
+      "reviews": 112,
+      "promotions": []
+    },
+    {
+      "id": "p021",
+      "code": "SUN50",
+      "name": "Kem chống nắng Sapharco SPF50",
+      "categoryId": "cat5",
+      "description": "Kem chống nắng bảo vệ da hiệu quả, chống tia UV. Sản phẩm của Sapharco.",
+      "price": 200000,
+      "originalPrice": 250000,
+      "unit": "Tuýp",
+      "stock": 80,
+      "image": "/image/logo.png",
+      "rating": 4.8,
+      "reviews": 345,
+      "promotions": [
+        {
+          "type": "discount",
+          "value": 20,
+          "description": "Giảm 20% khi mua 2 tuýp"
+        }
+      ]
+    },
+    {
+      "id": "p022",
+      "code": "SERUMC",
+      "name": "Serum Vitamin C Sapharco",
+      "categoryId": "cat5",
+      "description": "Serum Vitamin C làm sáng da, chống lão hóa. Sản phẩm cao cấp của Sapharco.",
+      "price": 350000,
+      "originalPrice": 420000,
+      "unit": "Lọ",
+      "stock": 50,
+      "image": "/image/logo.png",
+      "rating": 4.9,
+      "reviews": 456,
+      "promotions": [
+        {
+          "type": "gift",
+          "value": "Kem dưỡng ẩm",
+          "description": "Tặng kèm kem dưỡng ẩm khi mua"
+        }
+      ]
+    },
+    {
+      "id": "p023",
+      "code": "MOIST",
+      "name": "Kem dưỡng ẩm Sapharco",
+      "categoryId": "cat5",
+      "description": "Kem dưỡng ẩm cho da khô, mềm mịn. Sản phẩm của Sapharco.",
+      "price": 150000,
+      "originalPrice": 180000,
+      "unit": "Tuýp",
+      "stock": 90,
+      "image": "/image/logo.png",
+      "rating": 4.7,
+      "reviews": 278,
+      "promotions": [
+        {
+          "type": "discount",
+          "value": 15,
+          "description": "Giảm 15% khi mua 2 tuýp"
+        }
+      ]
+    },
+    {
+      "id": "p024",
+      "code": "CLEANSER",
+      "name": "Sữa rửa mặt Sapharco",
+      "categoryId": "cat5",
+      "description": "Sữa rửa mặt dịu nhẹ, làm sạch sâu. Sản phẩm của Sapharco.",
+      "price": 120000,
+      "originalPrice": 150000,
+      "unit": "Chai",
+      "stock": 110,
+      "image": "/image/logo.png",
+      "rating": 4.6,
+      "reviews": 234,
+      "promotions": []
+    },
+    {
+      "id": "p025",
+      "code": "TONER",
+      "name": "Toner Sapharco",
+      "categoryId": "cat5",
+      "description": "Toner cân bằng độ pH, se khít lỗ chân lông. Sản phẩm của Sapharco.",
+      "price": 180000,
+      "originalPrice": 220000,
+      "unit": "Chai",
+      "stock": 70,
+      "image": "/image/logo.png",
+      "rating": 4.7,
+      "reviews": 189,
+      "promotions": [
+        {
+          "type": "discount",
+          "value": 10,
+          "description": "Giảm 10% khi mua 2 chai"
+        }
+      ]
+    }
+  ],
+  "promotions": [
+    {
+      "id": "promo1",
+      "name": "Khuyến mãi chào mừng",
+      "type": "discount",
+      "value": 10,
+      "description": "Giảm 10% cho đơn hàng từ 200.000đ",
+      "startDate": "2025-01-01",
+      "endDate": "2025-12-31",
+      "minOrder": 200000
+    },
+    {
+      "id": "promo2",
+      "name": "Mua nhiều giảm nhiều",
+      "type": "discount",
+      "value": 15,
+      "description": "Giảm 15% cho đơn hàng từ 500.000đ",
+      "startDate": "2025-01-01",
+      "endDate": "2025-12-31",
+      "minOrder": 500000
+    },
+    {
+      "id": "promo3",
+      "name": "Khuyến mãi đặc biệt",
+      "type": "discount",
+      "value": 20,
+      "description": "Giảm 20% cho đơn hàng từ 1.000.000đ",
+      "startDate": "2025-01-01",
+      "endDate": "2025-12-31",
+      "minOrder": 1000000
+    },
+    {
+      "id": "promo4",
+      "name": "Tặng quà đặc biệt",
+      "type": "gift",
+      "value": "Hộp quà Sapharco cao cấp",
+      "description": "Tặng kèm hộp quà Sapharco khi mua từ 1.500.000đ",
+      "startDate": "2025-01-01",
+      "endDate": "2025-12-31",
+      "minOrder": 1500000
+    },
+    {
+      "id": "promo5",
+      "name": "Tặng khẩu trang y tế",
+      "type": "gift",
+      "value": "Hộp khẩu trang y tế 50 cái",
+      "description": "Tặng kèm hộp khẩu trang khi mua từ 800.000đ",
+      "startDate": "2025-01-01",
+      "endDate": "2025-12-31",
+      "minOrder": 800000
+    }
+  ]
+}
+
